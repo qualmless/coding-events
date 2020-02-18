@@ -5,7 +5,12 @@
 
 <header th:replace="fragments :: header"></header>
 
-<form method="post" th:replace="fragments :: form"></form>
+<!--<form method="post" th:replace="fragments :: form"></form>-->
+<form method="post">
+    <label>Name<input type="text" name="name"></label>
+    <label>Description<input type="text" name="description" class="form-control"></label>
+    <input type="submit" value="Create">
+</form>
 
 </body>
 </html>
