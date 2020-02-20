@@ -1,6 +1,9 @@
 package org.launchcode.codingevents.controllers;
 
+<<<<<<< Updated upstream
 import org.launchcode.codingevents.data.EventData;
+=======
+>>>>>>> Stashed changes
 import org.launchcode.codingevents.models.Event;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +20,11 @@ import java.util.List;
 @RequestMapping("events")
 public class EventController {
 
+<<<<<<< Updated upstream
+=======
+    private static List<Event> events = new ArrayList<>();
+
+>>>>>>> Stashed changes
     @GetMapping
     public String displayAllEvents(Model model) {
         model.addAttribute("title", "All Events");
@@ -31,6 +39,7 @@ public class EventController {
     }
 
     @PostMapping("create")
+<<<<<<< Updated upstream
     public String processCreateEventForm(@ModelAttribute Event newEvent) {
         EventData.add(newEvent);
         return "redirect:";
@@ -50,6 +59,10 @@ public class EventController {
                 EventData.remove(id);
             }
         }
+=======
+    public String processCreateEventForm(@RequestParam String eventName, @RequestParam String eventDescription) {
+        events.add(new Event(eventName,eventDescription));
+>>>>>>> Stashed changes
         return "redirect:";
     }
 
