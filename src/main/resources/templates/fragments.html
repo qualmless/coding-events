@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<!-head->
 <head th:fragment="head">
     <meta charset="UTF-8"/>
     <title>Coding Events</title>
@@ -8,13 +10,39 @@
 </head>
 <body>
 
+<!-header->
 <nav th:fragment="header">
     <h1 th:text="${title}">Coding Events</h1>
     <ul>
-        <li><a href="/events">All Events</a></li>
-        <li><a href="/events/create">Create Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="/events/edit">Edit Event</a></li>
+        <li class="nav-item"><a class="nav-link" href="/events/delete">Delete Event</a></li>
     </ul>
 </nav>
+
+<!--create event form-->
+<!--<form th:fragment="form" method="post">-->
+<!--    <label>Name<input type="text" name="name"></label>-->
+<!--    <label>Description<input type="text" name="description" class="form-control"></label>-->
+<!--    <input type="submit" value="Create">-->
+<!--</form>-->
+
+<!--table displaying events-->
+<table th:fragment="eventTable" class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tr th:each="event : ${events}">
+        <td th:text="${event.id}"></td>
+        <td th:text="${event.name}"></td>
+        <td th:text="${event.description}"></td>
+    </tr>
+</table>
 
 </body>
 </html>
