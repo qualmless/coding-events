@@ -32,11 +32,12 @@ public class EventData {
     }
 
     //edit an event
+
+
     public static void edit(int id, String name, String description) {
         events.get(id);
         events.remove(name, description);
         events.put(id,new Event(name, description));
-//    (int id, String name, String description)
     }
 
 }
