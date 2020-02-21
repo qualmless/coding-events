@@ -21,8 +21,7 @@ public class EventController {
     @GetMapping
     public String displayAllEvents(Model model) {
         model.addAttribute("title", "All Events");
-        model.addAttribute("events", EventData.getAll()
-        );
+        model.addAttribute("events", EventData.getAll());
         return "events/index";
     }
 
@@ -53,5 +52,23 @@ public class EventController {
         }
         return "redirect:";
     }
+
+    @GetMapping("edit")
+    public String displayEditEventForm(Model model, @PathVariable int eventId){
+        EventData.getById(eventId);
+        model.addAttribute("title","Edit Events");
+        model.addAttribute("events",EventData.getAll());
+        return "events/edit/${eventId}";
+    }
+
+    @PostMapping("edit")
+    public String processEditEventForm(int eventId, String name, String description){
+        for (int id :eventId) {
+            EventData.getById(id);
+            EventData.edit(id, name, description);
+        }
+        return "redirect:";
+    }
+
 
 }
