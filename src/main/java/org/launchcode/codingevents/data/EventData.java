@@ -34,10 +34,10 @@ public class EventData {
     //edit an event
 
 
-    public static void edit(int id, String name, String description) {
+    public static void edit(int id, Event event) {
         events.get(id);
-        events.remove(name, description);
-        events.put(id,new Event(name, description));
+        events.remove(event.getName(),event.getDescription());
+        events.put(event.getId(),new Event(String name, String description));
     }
 
 }

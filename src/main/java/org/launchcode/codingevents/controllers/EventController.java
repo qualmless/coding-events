@@ -62,9 +62,11 @@ public class EventController {
     }
 
     @PostMapping("edit")
-    public String processEditEventForm(int eventId, String name, String description){
-        EventData.getById(eventId);
+    public String processEditEventForm(Model model, int eventId, String name, String description){
+        model.addAttribute("title", "Edit Events");
+        model.addAttribute("events",EventData.getById(eventId));
         EventData.edit(eventId,name,description);
+//        EventData.getById(eventId);
 //        for (int id :eventId) {
 //            EventData.getById(id);
 //            EventData.edit(id, name, description);
