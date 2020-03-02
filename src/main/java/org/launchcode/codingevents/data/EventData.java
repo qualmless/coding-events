@@ -34,9 +34,9 @@ public class EventData {
     //edit an event
 
 
-    public static void edit(int id, String newName, String newDescription) {
+    public static void edit(int id, String newName, String newDescription, String newContactEmail) {
         events.remove(id);
-        events.put(id,new Event(newName,newDescription));
+        events.put(id,new Event(newName,newDescription,newContactEmail));
     }
 
 }

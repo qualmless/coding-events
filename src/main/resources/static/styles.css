@@ -2,3 +2,7 @@ body {
   font-size: 18px;
 }
 
+.error {
+    color:hotpink;
+    font: arial;
+}
