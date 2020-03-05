@@ -29,7 +29,7 @@ public class EventCategoryController {
     public String renderCreateEventCategoryForm (@ModelAttribute  Model model, Event newEvent){
         model.addAttribute("title","Create Category");
         eventCategoryRepository.save(newEvent);
-//        model.addAttribute("types", EventType.values());
+        model.addAttribute("types", EventType.values());
         return "eventCategories/create";
     }
 
@@ -38,7 +38,7 @@ public class EventCategoryController {
                                                   Errors errors, Model model){
         if(errors.hasErrors()) {
             model.addAttribute("title", "Create Event");
-            return "events/create";
+            return "eventCategories/create";
         }
         eventCategoryRepository.save(newEvent);
         return "redirect:";

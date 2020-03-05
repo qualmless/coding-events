@@ -1,6 +1,5 @@
 package org.launchcode.codingevents.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +13,6 @@ public class EventCategory {
     private String name;
 
     public EventCategory(int id,String name) {
-//        this();
         this.id=id;
         this.name=name;
     }
