@@ -19,7 +19,7 @@ public class EventCategory {
     private String name;
 
     public EventCategory(String name) {
-        this();
+//        this();
         this.name = name;
     }
 
