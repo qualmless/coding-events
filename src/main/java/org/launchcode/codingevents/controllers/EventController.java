@@ -7,13 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
-/**
- * Created by Chris Bay
- */
 @Controller
 @RequestMapping("events")
 public class EventController {
@@ -21,9 +22,8 @@ public class EventController {
     @Autowired
     private EventRepository eventRepository;
 
-
     @GetMapping
-    public String displayAllEvents(Model model) {
+    public String displayAllEvents(Model model){
         model.addAttribute("title", "All Events");
         model.addAttribute("events", eventRepository.findAll());
         return "events/index";
