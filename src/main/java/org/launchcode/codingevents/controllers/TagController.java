@@ -24,13 +24,13 @@ public class TagController {
     @GetMapping
     public String displayAllTags(Model model) {
         model.addAttribute("title", "All Tags");
-        model.addAttribute("categories", tagRepository.findAll());
+        model.addAttribute("tags", tagRepository.findAll());
         return "tags/index";
     }
 
     @GetMapping("create")
     public String renderCreateTagsForm(Model model) {
-        model.addAttribute("title", "Create Tags");
+        model.addAttribute("title", "Create Tag");
         model.addAttribute(new Tag());
         return "tags/create";
     }
