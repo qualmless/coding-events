@@ -63,6 +63,7 @@ public class EventController {
         }
 
         eventRepository.save(newEvent);
+
         return "redirect:";
     }
 
