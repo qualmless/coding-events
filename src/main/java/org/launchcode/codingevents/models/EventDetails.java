@@ -25,7 +25,7 @@ public class EventDetails extends AbstractEntity {
         this.contactEmail = contactEmail;
     }
 
-    public EventDetails() {};
+    public EventDetails() {}
 
     public String getDescription() {
         return description;

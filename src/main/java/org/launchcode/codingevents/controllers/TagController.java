@@ -19,7 +19,7 @@ import javax.validation.Valid;
 public class TagController {
 
     @Autowired
-    private TagRepository tagRepository;
+    TagRepository tagRepository;
 
     @GetMapping
     public String displayAllTags(Model model) {
@@ -41,7 +41,7 @@ public class TagController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Create Tag");
-            model.addAttribute(new Tag());
+            model.addAttribute(tag);
             return "tags/create";
         }
         tagRepository.save(tag);

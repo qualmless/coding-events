@@ -25,7 +25,7 @@ public class Event extends AbstractEntity{
     @NotNull(message="Category is required")
     private EventCategory eventCategory;
 
-    public Event(String name, String description, String contactEmail, EventCategory eventCategory) {
+    public Event(String name, EventCategory eventCategory) {
         this.name = name;
         this.eventCategory = eventCategory;
     }

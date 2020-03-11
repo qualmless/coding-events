@@ -33,9 +33,8 @@ public class EventController {
         } else {
             Optional<EventCategory> result = eventCategoryRepository.findById(categoryId);
             if (result.isEmpty()) {
-                model.addAttribute("title", "Invalid Category Id: " + categoryId);
-            }
-            else {
+                model.addAttribute("title", "Invalid Category ID: " + categoryId);
+            } else {
                 EventCategory category = result.get();
                 model.addAttribute("title", "Events in category: " + category.getName());
                 model.addAttribute("events", category.getEvents());
